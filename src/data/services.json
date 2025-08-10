@@ -1,0 +1,52 @@
+{
+  "services": [
+    {
+      "id": "edi-solutions",
+      "title": "Soluciones EDI",
+      "description": "Soluciones integrales de Intercambio Electrónico de Datos para comunicación B2B sin interrupciones.",
+      "features": [
+        "Intercambio automatizado de documentos",
+        "Procesamiento de transacciones en tiempo real",
+        "Soporte multi-formato",
+        "Gestión de cumplimiento"
+      ],
+      "icon": "network"
+    },
+    {
+      "id": "supply-chain",
+      "title": "Optimización de Cadena de Suministro",
+      "description": "Visibilidad y optimización integral de la cadena de suministro para máxima eficiencia.",
+      "features": [
+        "Gestión de inventario",
+        "Pronóstico de demanda",
+        "Coordinación logística",
+        "Análisis de rendimiento"
+      ],
+      "icon": "truck"
+    },
+    {
+      "id": "data-sync",
+      "title": "Sincronización de Datos de Productos",
+      "description": "Gestión sincronizada de datos de productos para minoristas y proveedores.",
+      "features": [
+        "Actualizaciones de datos en tiempo real",
+        "Sincronización multicanal",
+        "Aseguramiento de calidad de datos",
+        "Flujos de trabajo automatizados"
+      ],
+      "icon": "refresh"
+    },
+    {
+      "id": "integration",
+      "title": "Integración de Socios Comerciales",
+      "description": "Integración perfecta con socios comerciales y sistemas empresariales.",
+      "features": [
+        "Conectividad API",
+        "Integraciones personalizadas",
+        "Soporte para sistemas legacy",
+        "Arquitectura escalable"
+      ],
+      "icon": "link"
+    }
+  ]
+}

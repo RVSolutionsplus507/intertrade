@@ -1,0 +1,97 @@
+---
+import companyData from '../../data/company.json';
+const yearsExperience = new Date().getFullYear() - 2009;
+---
+
+<section id="nosotros" class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 bg-gradient-to-r from-carrot-orange/5 to-eastern-blue/5"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-eastern-blue/10 to-transparent rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-carrot-orange/10 to-transparent rounded-full blur-3xl"></div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center bg-eastern-blue/10 rounded-full px-6 py-2 mb-6">
+        <div class="w-5 h-5 mr-2 flex items-center justify-center">
+          <img src="/assets/icons/ceo.svg" alt="CEO" class="w-5 h-5 text-eastern-blue" />
+        </div>
+        <span class="text-eastern-blue font-gotham-medium text-sm uppercase tracking-wide">Nosotros</span>
+      </div>
+      
+      <h2 class="font-gotham-bold text-4xl md:text-5xl text-gray-900 mb-4">
+        Quiénes <span class="text-transparent bg-clip-text bg-gradient-to-r from-carrot-orange to-manhattan">Somos</span>
+      </h2>
+      <div class="mx-auto w-20 h-1 bg-gradient-to-r from-carrot-orange to-manhattan rounded-full mt-6"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Content mejorado -->
+      <div class="space-y-8">
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl shadow-gray-900/10 border border-white/20">
+          <div class="space-y-6 font-gotham text-lg text-gray-700 leading-relaxed">
+            <p class="relative pl-6 text-justify">
+              <span class="absolute -left-2 -top-1 text-5xl text-carrot-orange/30 font-serif leading-none">"</span>
+              <span class="font-gotham-bold text-eastern-blue text-xl">Intertrade Solutions Inc.</span> fue fundada en 2009 con la visión de incursionar en el comercio internacional priorizando la <span class="font-gotham-bold text-carrot-orange">calidad sobre la cantidad</span>. Hoy, nos posicionamos como un socio confiable que garantiza excelencia en cada materia prima e insumo que comercializamos.
+            </p>
+            <p class="pl-6 text-justify">
+              Investigamos, evaluamos, seleccionamos y negociamos con <span class="font-gotham-bold text-eastern-blue">proveedores estratégicos</span> para asegurar las mejores condiciones: calidad superior, precios competitivos, un movimiento logístico eficiente y entregas oportunas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pilares rediseñados -->
+      <div class="space-y-6">
+        <div class="text-center mb-8">
+          <h3 class="font-gotham-bold text-3xl text-gray-900 mb-2">Nuestros Pilares</h3>
+          <p class="font-gotham text-gray-600">Los valores que nos definen</p>
+        </div>
+        
+        <div class="space-y-4">
+          <!-- Calidad -->
+          <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-carrot-orange/30 hover:-translate-y-1">
+            <div class="flex items-center space-x-4">
+              <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-carrot-orange to-manhattan rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <img src="/assets/icons/calidad.svg" alt="Calidad" class="w-8 h-8 filter brightness-0 invert" />
+              </div>
+              <div class="flex-1">
+                <div class="font-gotham-bold text-xl text-gray-900 mb-1 group-hover:text-carrot-orange transition-colors duration-300">Calidad</div>
+                <div class="font-gotham text-gray-600">Somos expertos en productos de alta calidad</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Puntualidad -->
+          <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-eastern-blue/30 hover:-translate-y-1">
+            <div class="flex items-center space-x-4">
+              <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-eastern-blue to-spray rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <img src="/assets/icons/puntualidad.svg" alt="Puntualidad" class="w-8 h-8 filter brightness-0 invert" />
+              </div>
+              <div class="flex-1">
+                <div class="font-gotham-bold text-xl text-gray-900 mb-1 group-hover:text-eastern-blue transition-colors duration-300">Puntualidad</div>
+                <div class="font-gotham text-gray-600">Despacho en tiempo garantizado</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Experiencia -->
+          <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-golden-glow/30 hover:-translate-y-1">
+            <div class="flex items-center space-x-4">
+              <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-golden-glow to-manhattan rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <img src="/assets/icons/experiencia.svg" alt="Experiencia" class="w-8 h-8 filter brightness-0 invert" />
+              </div>
+              <div class="flex-1">
+                <div class="font-gotham-bold text-xl text-gray-900 mb-1 group-hover:text-golden-glow transition-colors duration-300">Experiencia</div>
+                <div class="flex items-baseline space-x-2">
+                  <div class="font-gotham-bold text-3xl text-gray-900">{yearsExperience}</div>
+                  <div class="font-gotham text-sm text-gray-600">años en el mercado internacional</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

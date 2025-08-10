@@ -1,0 +1,197 @@
+---
+import companyData from '../../data/company.json';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center">
+          <img 
+            src="/Logo.webp" 
+            alt={companyData.name}
+            class="h-12 w-auto object-contain"
+          />
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-6">
+          <a href="#nosotros" class="nav-link font-gotham-medium text-eastern-blue hover:text-carrot-orange px-3 py-2 text-sm transition-all duration-300 hover:scale-105" data-section="nosotros">
+            Nosotros
+          </a>
+          <a href="#sectores" class="nav-link font-gotham-medium text-eastern-blue hover:text-carrot-orange px-3 py-2 text-sm transition-all duration-300 hover:scale-105" data-section="sectores">
+            Sectores
+          </a>
+          <a href="#resenas" class="nav-link font-gotham-medium text-eastern-blue hover:text-carrot-orange px-3 py-2 text-sm transition-all duration-300 hover:scale-105" data-section="resenas">
+            Reseñas
+          </a>
+          <a href="#materiaprima" class="nav-link font-gotham-medium text-eastern-blue hover:text-carrot-orange px-3 py-2 text-sm transition-all duration-300 hover:scale-105" data-section="materiaprima">
+            Materia Prima
+          </a>
+          <a href="#puertos" class="nav-link font-gotham-medium text-eastern-blue hover:text-carrot-orange px-3 py-2 text-sm transition-all duration-300 hover:scale-105" data-section="puertos">
+            Puertos
+          </a>
+          <a href="#faq" class="nav-link font-gotham-medium text-eastern-blue hover:text-carrot-orange px-3 py-2 text-sm transition-all duration-300 hover:scale-105" data-section="faq">
+            FAQ
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="hidden md:block">
+        <a 
+          href="#footer" 
+          class="bg-carrot-orange hover:bg-eastern-blue text-white px-6 py-2 rounded-lg font-gotham-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+        >
+          Contáctanos
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button 
+          type="button" 
+          class="mobile-menu-button p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+        >
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu hidden md:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+        <a href="#nosotros" class="mobile-nav-link nav-link block px-3 py-2 text-base font-gotham-medium text-eastern-blue hover:text-carrot-orange hover:bg-gray-50 rounded-md transition-all duration-300" data-section="nosotros">
+          Nosotros
+        </a>
+        <a href="#sectores" class="mobile-nav-link nav-link block px-3 py-2 text-base font-gotham-medium text-eastern-blue hover:text-carrot-orange hover:bg-gray-50 rounded-md transition-all duration-300" data-section="sectores">
+          Sectores
+        </a>
+        <a href="#resenas" class="mobile-nav-link nav-link block px-3 py-2 text-base font-gotham-medium text-eastern-blue hover:text-carrot-orange hover:bg-gray-50 rounded-md transition-all duration-300" data-section="resenas">
+          Reseñas
+        </a>
+        <a href="#materiaprima" class="mobile-nav-link nav-link block px-3 py-2 text-base font-gotham-medium text-eastern-blue hover:text-carrot-orange hover:bg-gray-50 rounded-md transition-all duration-300" data-section="materiaprima">
+          Materia Prima
+        </a>
+        <a href="#puertos" class="mobile-nav-link nav-link block px-3 py-2 text-base font-gotham-medium text-eastern-blue hover:text-carrot-orange hover:bg-gray-50 rounded-md transition-all duration-300" data-section="puertos">
+          Puertos
+        </a>
+        <a href="#faq" class="mobile-nav-link nav-link block px-3 py-2 text-base font-gotham-medium text-eastern-blue hover:text-carrot-orange hover:bg-gray-50 rounded-md transition-all duration-300" data-section="faq">
+          FAQ
+        </a>
+        <a 
+          href="#footer" 
+          class="mobile-nav-link block w-full text-center bg-carrot-orange hover:bg-eastern-blue text-white px-4 py-2 rounded-lg font-gotham-medium transition-all duration-300 mt-4"
+        >
+          Contáctanos
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenuButton.setAttribute('aria-expanded', (!isExpanded).toString());
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Close mobile menu when clicking on links
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+        mobileMenuButton?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Scrollspy functionality
+    const sections = ['nosotros', 'sectores', 'resenas', 'materiaprima', 'puertos', 'faq'];
+    const navLinks = document.querySelectorAll('.nav-link');
+    const allNavLinks = document.querySelectorAll('a[href^="#"]');
+    
+    function updateActiveSection() {
+      let currentSection = '';
+      
+      // Check which section is currently in view
+      sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          const offset = 100; // Account for fixed header
+          
+          // Section is considered active if it's in the viewport
+          if (rect.top <= offset && rect.bottom >= offset) {
+            currentSection = sectionId;
+          }
+        }
+      });
+      
+      // Update navigation indicators with scale effect
+      navLinks.forEach(link => {
+        const linkSection = link.getAttribute('data-section');
+        
+        if (linkSection === currentSection) {
+          // Active state - color change and scale
+          link.classList.add('text-carrot-orange', 'scale-110', 'font-gotham-bold');
+          link.classList.remove('text-eastern-blue', 'font-gotham-medium');
+        } else {
+          // Inactive state - reset to normal
+          link.classList.remove('text-carrot-orange', 'scale-110', 'font-gotham-bold');
+          link.classList.add('text-eastern-blue', 'font-gotham-medium');
+        }
+      });
+    }
+    
+    // Listen for scroll events
+    let scrollTimeout: number | undefined;
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+      scrollTimeout = window.setTimeout(updateActiveSection, 10);
+    });
+    
+    // Initial check
+    updateActiveSection();
+    
+    // Update on resize
+    window.addEventListener('resize', updateActiveSection);
+
+    // Smooth scrolling for anchor links
+    allNavLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        if (href) {
+          const target = document.querySelector(href) as HTMLElement;
+          if (target) {
+            const headerHeight = 80;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  });
+</script>

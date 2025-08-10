@@ -1,0 +1,197 @@
+---
+import '../styles/global.css';
+import LinkedInButton from '../components/ui/LinkedInButton.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+  ogType?: string;
+  twitterCard?: string;
+  articleAuthor?: string;
+  articlePublishedTime?: string;
+  articleModifiedTime?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = "Intertrade Solutions Inc. - Excelencia en EDI y Cadena de Suministro",
+  description = "Proveedor líder de soluciones EDI y optimización de cadena de suministro para las industrias de ropa, calzado y mercancía general. Parte de SPS Commerce.",
+  keywords = "soluciones EDI, gestión cadena suministro, intercambio electrónico datos, tecnología retail, integración socios comerciales, SPS Commerce",
+  ogImage = "/Logo.webp",
+  canonicalUrl = Astro.url.href,
+  ogType = "website",
+  twitterCard = "summary_large_image",
+  articleAuthor,
+  articlePublishedTime,
+  articleModifiedTime,
+  noindex = false
+} = Astro.props;
+
+// Generate absolute URLs for OG images
+const absoluteOgImage = new URL(ogImage, Astro.site).href;
+const absoluteCanonicalUrl = canonicalUrl || Astro.url.href;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
+		<meta name="author" content="Intertrade Solutions Inc." />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#F18B21" />
+		<meta name="msapplication-TileColor" content="#F18B21" />
+		<meta name="format-detection" content="telephone=no" />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={absoluteCanonicalUrl} />
+		
+		<!-- Sitemap -->
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		
+		<!-- Favicon and Icons -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="manifest" href="/site.webmanifest" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content={ogType} />
+		<meta property="og:url" content={absoluteCanonicalUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={absoluteOgImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content={`${title} - Imagen representativa`} />
+		<meta property="og:site_name" content="Intertrade Solutions Inc." />
+		<meta property="og:locale" content="es_ES" />
+		{articleAuthor && <meta property="article:author" content={articleAuthor} />}
+		{articlePublishedTime && <meta property="article:published_time" content={articlePublishedTime} />}
+		{articleModifiedTime && <meta property="article:modified_time" content={articleModifiedTime} />}
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content={twitterCard} />
+		<meta name="twitter:site" content="@intertradesolutions" />
+		<meta name="twitter:creator" content="@intertradesolutions" />
+		<meta name="twitter:url" content={absoluteCanonicalUrl} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={absoluteOgImage} />
+		<meta name="twitter:image:alt" content={`${title} - Imagen representativa`} />
+		
+		<!-- Security Headers -->
+		<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+		<meta http-equiv="X-Frame-Options" content="DENY" />
+		<meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+		<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+		
+		<!-- DNS Prefetch and Preconnect for Performance -->
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+		<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+		
+		<!-- Optimized Font Loading -->
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+		<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" /></noscript>
+		
+		<!-- Enhanced Schema.org structured data -->
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "Organization",
+		  "name": "Intertrade Solutions Inc.",
+		  "alternateName": "Intertrade Solutions",
+		  "description": "Leading provider of EDI solutions and supply chain optimization for retail, apparel, and general merchandise industries",
+		  "url": "https://intertradesolutions.com",
+		  "logo": {
+		    "@type": "ImageObject",
+		    "url": "https://intertradesolutions.com/Logo.webp",
+		    "width": 300,
+		    "height": 100
+		  },
+		  "image": "https://intertradesolutions.com/Logo.webp",
+		  "industry": "Supply Chain Technology",
+		  "foundingDate": "2009",
+		  "parentOrganization": {
+		    "@type": "Organization",
+		    "name": "SPS Commerce",
+		    "url": "https://www.spscommerce.com"
+		  },
+		  "address": {
+		    "@type": "PostalAddress",
+		    "addressCountry": "US",
+		    "addressRegion": "North America"
+		  },
+		  "contactPoint": {
+		    "@type": "ContactPoint",
+		    "contactType": "customer service",
+		    "availableLanguage": ["Spanish", "English"]
+		  },
+		  "sameAs": [
+		    "https://www.linkedin.com/company/intertradesolutions"
+		  ],
+		  "serviceArea": {
+		    "@type": "GeoCircle",
+		    "name": "North America"
+		  },
+		  "hasOfferCatalog": {
+		    "@type": "OfferCatalog",
+		    "name": "EDI and Supply Chain Services",
+		    "itemListElement": [
+		      {
+		        "@type": "Offer",
+		        "itemOffered": {
+		          "@type": "Service",
+		          "name": "EDI Solutions",
+		          "description": "Electronic Data Interchange solutions for B2B communication",
+		          "provider": {
+		            "@type": "Organization",
+		            "name": "Intertrade Solutions Inc."
+		          }
+		        }
+		      },
+		      {
+		        "@type": "Offer",
+		        "itemOffered": {
+		          "@type": "Service",
+		          "name": "Supply Chain Optimization",
+		          "description": "End-to-end supply chain visibility and optimization",
+		          "provider": {
+		            "@type": "Organization",
+		            "name": "Intertrade Solutions Inc."
+		          }
+		        }
+		      },
+		      {
+		        "@type": "Offer",
+		        "itemOffered": {
+		          "@type": "Service",
+		          "name": "Raw Materials Trading",
+		          "description": "International trading of raw materials and commodities",
+		          "provider": {
+		            "@type": "Organization",
+		            "name": "Intertrade Solutions Inc."
+		          }
+		        }
+		      }
+		    ]
+		  }
+		}
+		</script>
+		
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+		<!-- LinkedIn Floating Button -->
+		<LinkedInButton />
+	</body>
+</html>

@@ -1,0 +1,229 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header/Header.astro';
+import Footer from '../components/footer/Footer.astro';
+import SEO from '../components/seo/SEO.astro';
+
+const pageTitle = "Servicios - Intertrade Solutions Inc.";
+const pageDescription = "Descubre nuestros servicios especializados en EDI, optimización de cadena de suministro, comercio de materias primas y soluciones logísticas internacionales.";
+const pageKeywords = "servicios EDI, optimización cadena suministro, comercio materias primas, soluciones logísticas, puertos internacionales, tecnología retail";
+
+const servicesStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": "https://intertradesolutions.com/servicios",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Servicios de Intertrade Solutions",
+    "itemListElement": [
+      {
+        "@type": "Service",
+        "name": "Soluciones EDI",
+        "description": "Intercambio electrónico de datos para comunicación B2B eficiente",
+        "provider": {
+          "@type": "Organization",
+          "name": "Intertrade Solutions Inc."
+        }
+      },
+      {
+        "@type": "Service", 
+        "name": "Optimización de Cadena de Suministro",
+        "description": "Visibilidad y optimización integral de la cadena de suministro",
+        "provider": {
+          "@type": "Organization",
+          "name": "Intertrade Solutions Inc."
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Comercio de Materias Primas",
+        "description": "Comercio internacional de materias primas y commodities",
+        "provider": {
+          "@type": "Organization",
+          "name": "Intertrade Solutions Inc."
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Gestión Portuaria",
+        "description": "Servicios especializados en puertos estratégicos internacionales",
+        "provider": {
+          "@type": "Organization",
+          "name": "Intertrade Solutions Inc."
+        }
+      }
+    ]
+  }
+};
+---
+
+<Layout>
+  <SEO 
+    title={pageTitle}
+    description={pageDescription}
+    keywords={pageKeywords}
+    ogType="website"
+    structuredData={servicesStructuredData}
+    slot="head"
+  />
+  
+  <Header />
+  
+  <main class="min-h-screen bg-white">
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-eastern-blue to-carrot-orange py-20">
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-gotham-bold text-white mb-6">
+          Nuestros Servicios
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+          Soluciones integrales para optimizar tu cadena de suministro y conectar mercados globales
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- EDI Solutions -->
+          <article class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-carrot-orange to-manhattan rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h2 class="text-2xl font-gotham-bold text-gray-900 mb-4">Soluciones EDI</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Intercambio electrónico de datos que optimiza la comunicación B2B, reduce errores y acelera los procesos comerciales.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-carrot-orange rounded-full mr-3"></span>
+                Integración automática de datos
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-carrot-orange rounded-full mr-3"></span>
+                Reducción de errores manuales
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-carrot-orange rounded-full mr-3"></span>
+                Comunicación en tiempo real
+              </li>
+            </ul>
+          </article>
+
+          <!-- Supply Chain Optimization -->
+          <article class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-eastern-blue to-spray rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h2 class="text-2xl font-gotham-bold text-gray-900 mb-4">Optimización de Cadena</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Visibilidad completa y optimización integral de tu cadena de suministro para máxima eficiencia operacional.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-eastern-blue rounded-full mr-3"></span>
+                Visibilidad end-to-end
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-eastern-blue rounded-full mr-3"></span>
+                Análisis predictivo
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-eastern-blue rounded-full mr-3"></span>
+                Optimización de inventarios
+              </li>
+            </ul>
+          </article>
+
+          <!-- Raw Materials Trading -->
+          <article class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-golden-glow to-sante-fe rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+              </svg>
+            </div>
+            <h2 class="text-2xl font-gotham-bold text-gray-900 mb-4">Materias Primas</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Comercio internacional de materias primas y commodities con calidad garantizada y entregas puntuales.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-golden-glow rounded-full mr-3"></span>
+                Calidad certificada
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-golden-glow rounded-full mr-3"></span>
+                Entregas puntuales
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-golden-glow rounded-full mr-3"></span>
+                Red global de proveedores
+              </li>
+            </ul>
+          </article>
+
+          <!-- Port Management -->
+          <article class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-manhattan to-carrot-orange rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            <h2 class="text-2xl font-gotham-bold text-gray-900 mb-4">Gestión Portuaria</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Servicios especializados en puertos estratégicos para facilitar el comercio internacional eficiente.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-manhattan rounded-full mr-3"></span>
+                Puertos estratégicos
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-manhattan rounded-full mr-3"></span>
+                Logística especializada
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-manhattan rounded-full mr-3"></span>
+                Gestión documental
+              </li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-carrot-orange to-eastern-blue">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-gotham-bold text-white mb-6">
+          ¿Listo para optimizar tu cadena de suministro?
+        </h2>
+        <p class="text-xl text-white/90 mb-8 leading-relaxed">
+          Conecta con nuestros expertos y descubre cómo podemos transformar tu operación
+        </p>
+        <a 
+          href="/#contacto" 
+          class="inline-flex items-center px-8 py-4 bg-white text-carrot-orange font-gotham-bold rounded-xl hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
+        >
+          Solicitar Consulta
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+</Layout>

@@ -1,0 +1,71 @@
+{
+  "materiaprima": {
+    "title": "Materia Prima",
+    "description": "Ofrecemos una amplia gama de materias primas de alta calidad para diversas industrias. Nuestro compromiso es proporcionar productos que cumplan con los más altos estándares de calidad y especificaciones técnicas.",
+    "products": [
+      "Materias primas químicas",
+      "Productos farmacéuticos",
+      "Ingredientes alimentarios",
+      "Materiales industriales",
+      "Componentes especializados"
+    ],
+    "image": "/assets/materia-prima.jpg",
+    "color": "blue"
+  },
+  "alimentos": {
+    "title": "Alimentos",
+    "subtitle": "ALIMENTOS PARA LOS QUE PROVEEDORES",
+    "description": "Proveemos alimentos de alta calidad para distribuidores y mayoristas. Nuestra red de proveedores garantiza productos frescos y de excelente calidad para satisfacer las demandas del mercado.",
+    "features": [
+      "Productos frescos y de calidad",
+      "Cadena de frío garantizada",
+      "Certificaciones internacionales",
+      "Distribución eficiente",
+      "Variedad de productos alimentarios"
+    ],
+    "image": "/assets/alimentos.jpg",
+    "color": "orange"
+  },
+  "materiales": {
+    "title": "Materiales",
+    "subtitle": "ALIANZA MATERIALES ACERO INOXIDABLE",
+    "description": "Especialistas en la importación y distribución de materiales de construcción y industriales. Trabajamos con los mejores proveedores internacionales para garantizar calidad y disponibilidad.",
+    "categories": [
+      "Materiales de construcción",
+      "Acero inoxidable",
+      "Metales especializados",
+      "Componentes industriales",
+      "Materiales técnicos"
+    ],
+    "image": "/assets/materiales.jpg",
+    "color": "gray"
+  },
+  "acero": {
+    "title": "Acero Inoxidable",
+    "subtitle": "ACERCA DE NOSOTROS",
+    "description": "Somos especialistas en acero inoxidable con años de experiencia en el mercado. Ofrecemos una amplia gama de productos y servicios relacionados con acero inoxidable para diversas aplicaciones industriales.",
+    "services": [
+      "Suministro de acero inoxidable",
+      "Corte y procesamiento",
+      "Asesoría técnica especializada",
+      "Logística y distribución",
+      "Certificaciones de calidad"
+    ],
+    "image": "/assets/acero-inoxidable.jpg",
+    "color": "blue"
+  },
+  "construccion": {
+    "title": "Productos de Construcción",
+    "subtitle": "CONTÁCTANOS",
+    "description": "Proveemos productos de construcción de alta calidad para proyectos residenciales, comerciales e industriales. Nuestro catálogo incluye una amplia variedad de materiales y herramientas.",
+    "products": [
+      "Materiales de construcción",
+      "Herramientas especializadas",
+      "Equipos de seguridad",
+      "Sistemas de construcción",
+      "Accesorios y componentes"
+    ],
+    "image": "/assets/construccion.jpg",
+    "color": "orange"
+  }
+}

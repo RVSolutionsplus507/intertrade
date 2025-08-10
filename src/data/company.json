@@ -1,0 +1,29 @@
+{
+  "name": "Intertrade Solutions Inc.",
+  "tagline": "Soluciones Integrales de Comercio Internacional",
+  "description": "Empresa panameña especializada en soluciones de comercio internacional, logística y cadena de suministro.",
+  "founded": "2009",
+  "headquarters": "Panamá",
+  "industry": "Comercio Internacional y Logística",
+  "specialties": [
+    "Materia Prima",
+    "Alimentos",
+    "Materiales",
+    "Acero Inoxidable",
+    "Productos de Construcción",
+    "Logística Internacional"
+  ],
+  "sections": {
+    "materiaprima": "Materia Prima",
+    "alimentos": "Alimentos",
+    "materiales": "Materiales",
+    "acero": "Acero Inoxidable",
+    "construccion": "Productos de Construcción",
+    "contactanos": "Contáctanos"
+  },
+  "contact": {
+    "phone": "+507 XXXX-XXXX",
+    "email": "info@intertradesolutions.com",
+    "address": "Panamá, República de Panamá"
+  }
+}

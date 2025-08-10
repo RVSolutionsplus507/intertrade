@@ -1,0 +1,225 @@
+---
+// Carousel de imágenes para Materia Prima
+const images = [
+  {
+    src: '/assets/images/parafina.webp',
+    alt: 'Parafinas industriales',
+    title: 'Parafinas',
+    description: 'Solventes industriales de alta pureza'
+  },
+  {
+    src: '/assets/images/azufre.webp',
+    alt: 'Azufre industrial',
+    title: 'Compuestos Químicos',
+    description: 'Catalizadores y reactivos especializados'
+  },
+  {
+    src: '/assets/images/mezclaparafina.webp',
+    alt: 'Mezclas de parafina',
+    title: 'Solventes Industriales',
+    description: 'Mezclas especializadas para industria'
+  },
+  {
+    src: '/assets/images/fosforo.webp',
+    alt: 'Fósforos y cerillos',
+    title: 'Insumos para Fósforos',
+    description: 'Materiales para industria cerillera'
+  },
+  {
+    src: '/assets/images/bobinasdecarton.webp',
+    alt: 'Bobinas de cartón',
+    title: 'Materias Primas para Empaques',
+    description: 'Soluciones de empaque sostenibles'
+  },
+  {
+    src: '/assets/images/rollosdepapel.webp',
+    alt: 'Rollos de papel',
+    title: 'Materiales de Empaque',
+    description: 'Papeles especializados para industria'
+  },
+  {
+    src: '/assets/images/tubosgrandes.webp',
+    alt: 'Tubos industriales grandes',
+    title: 'Resinas y Polímeros',
+    description: 'Materiales técnicos especializados'
+  },
+  {
+    src: '/assets/images/tubospequenos.webp',
+    alt: 'Tubos industriales pequeños',
+    title: 'Componentes Técnicos',
+    description: 'Piezas de precisión industrial'
+  },
+  {
+    src: '/assets/images/cartonparapeine.webp',
+    alt: 'Cartón para peines',
+    title: 'Cartones Especializados',
+    description: 'Materiales para manufactura'
+  },
+  {
+    src: '/assets/images/almacenamiento.webp',
+    alt: 'Almacenamiento industrial',
+    title: 'Logística Especializada',
+    description: 'Soluciones de almacenamiento'
+  }
+];
+---
+
+<div class="relative">
+  <!-- Carousel Container -->
+  <div id="materia-carousel" class="overflow-hidden rounded-3xl">
+    <div id="materia-track" class="flex transition-transform duration-500 ease-in-out">
+      {images.map((image, index) => (
+        <div class="w-full flex-shrink-0 px-4">
+          <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 overflow-hidden">
+            <!-- Image Container -->
+            <div class="aspect-[4/3] relative overflow-hidden">
+              <img 
+                src={image.src} 
+                alt={image.alt}
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                loading="lazy"
+              />
+              <!-- Overlay with gradient -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              
+              <!-- Category Badge -->
+              <div class="absolute top-4 left-4">
+                <div class="bg-carrot-orange/90 backdrop-blur-sm rounded-full px-3 py-1 border border-white/20">
+                  <span class="font-gotham-bold text-white text-xs">Materia Prima</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Content -->
+            <div class="p-6">
+              <h3 class="font-gotham-bold text-xl text-gray-900 mb-2">{image.title}</h3>
+              <p class="font-gotham text-gray-600 text-sm leading-relaxed mb-4">{image.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Navigation Arrows -->
+  <div class="flex justify-center items-center mt-8 space-x-6">
+    <button 
+      id="prev-btn"
+      class="w-12 h-12 bg-gradient-to-br from-carrot-orange to-manhattan rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+    >
+      <svg class="w-5 h-5 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </button>
+    
+    <div class="flex space-x-2">
+      {images.map((_, index) => (
+        <div class="materia-dot w-2 h-2 rounded-full transition-all duration-300 bg-gray-300"></div>
+      ))}
+    </div>
+    
+    <button 
+      id="next-btn"
+      class="w-12 h-12 bg-gradient-to-br from-carrot-orange to-manhattan rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+    >
+      <svg class="w-5 h-5 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  interface CarouselElements {
+    track: HTMLElement | null;
+    dots: NodeListOf<Element>;
+  }
+
+  class MateriaPrimaCarousel {
+    private currentIndex: number = 0;
+    private totalSlides: number = 10;
+    private track: HTMLElement | null;
+    private dots: NodeListOf<Element>;
+    private prevBtn: HTMLElement | null;
+    private nextBtn: HTMLElement | null;
+    private autoPlayInterval: number | null = null;
+    
+    constructor() {
+      this.track = document.querySelector('#materia-track');
+      this.dots = document.querySelectorAll('.materia-dot');
+      this.prevBtn = document.querySelector('#prev-btn');
+      this.nextBtn = document.querySelector('#next-btn');
+      this.init();
+    }
+    
+    private init(): void {
+      // Add click listeners to arrow buttons
+      this.prevBtn?.addEventListener('click', () => this.prevSlide());
+      this.nextBtn?.addEventListener('click', () => this.nextSlide());
+      
+      // Start autoplay
+      this.startAutoPlay();
+      
+      // Pause autoplay on hover
+      const carousel = document.querySelector('#materia-carousel');
+      carousel?.addEventListener('mouseenter', () => this.stopAutoPlay());
+      carousel?.addEventListener('mouseleave', () => this.startAutoPlay());
+      
+      // Initialize dots
+      this.updateDots();
+    }
+    
+    private prevSlide(): void {
+      this.currentIndex = this.currentIndex === 0 ? this.totalSlides - 1 : this.currentIndex - 1;
+      this.updateCarousel();
+    }
+    
+    private nextSlide(): void {
+      this.currentIndex = this.currentIndex === this.totalSlides - 1 ? 0 : this.currentIndex + 1;
+      this.updateCarousel();
+    }
+    
+    private goToSlide(index: number): void {
+      this.currentIndex = index;
+      this.updateCarousel();
+    }
+    
+    private updateCarousel(): void {
+      if (this.track) {
+        this.track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+      }
+      this.updateDots();
+    }
+    
+    private updateDots(): void {
+      this.dots.forEach((dot: Element, index: number) => {
+        if (index === this.currentIndex) {
+          dot.classList.add('bg-carrot-orange', 'scale-125');
+          dot.classList.remove('bg-gray-300');
+        } else {
+          dot.classList.add('bg-gray-300');
+          dot.classList.remove('bg-carrot-orange', 'scale-125');
+        }
+      });
+    }
+    
+    private startAutoPlay(): void {
+      this.stopAutoPlay();
+      this.autoPlayInterval = window.setInterval(() => {
+        this.nextSlide();
+      }, 5000);
+    }
+    
+    private stopAutoPlay(): void {
+      if (this.autoPlayInterval) {
+        clearInterval(this.autoPlayInterval);
+        this.autoPlayInterval = null;
+      }
+    }
+  }
+  
+  // Initialize carousel when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    new MateriaPrimaCarousel();
+  });
+</script>

@@ -1,0 +1,19 @@
+{
+  "name": "Intertrade Solutions Inc.",
+  "short_name": "Intertrade",
+  "description": "Proveedor líder de soluciones EDI y optimización de cadena de suministro",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#F18B21",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "technology"],
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

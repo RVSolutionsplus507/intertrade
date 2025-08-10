@@ -9,19 +9,19 @@ import ContactForm from './ContactForm.astro';
     <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0); background-size: 40px 40px;"></div>
   </div>
   
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
       
       <!-- Company Info & Contact -->
       <div class="lg:col-span-1">
         <!-- Logo -->
-        <div class="flex items-center space-x-3 mb-6">
+        <div class="flex items-center justify-center lg:justify-start space-x-3 mb-6">
           <div class="relative">
             <div class="absolute inset-0 bg-gradient-to-r from-carrot-orange/20 to-eastern-blue/20 rounded-xl blur-lg"></div>
             <img 
               src="/Logo.webp" 
               alt={companyData.name}
-              class="relative h-28 w-auto drop-shadow-xl"
+              class="relative h-20 sm:h-24 lg:h-28 w-auto drop-shadow-xl"
             />
           </div>
         </div>
@@ -39,18 +39,18 @@ import ContactForm from './ContactForm.astro';
             <span class="w-1.5 h-6 bg-gradient-to-b from-carrot-orange to-eastern-blue rounded-full mr-2"></span>
             Contacto
           </h4>
-          <div class="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10 hover:border-carrot-orange/30 transition-all duration-300">
+          <div class="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10 transition-all duration-300 hover:border-carrot-orange/30 active:border-carrot-orange/50 active:bg-white/10">
             <button 
               onclick="openEmailClient()" 
-              class="font-gotham text-carrot-orange hover:text-eastern-blue transition-colors duration-300 flex items-center space-x-2 group w-full text-left"
+              class="font-gotham text-carrot-orange transition-colors duration-300 flex items-center space-x-2 group w-full text-left hover:text-eastern-blue active:text-eastern-blue active:scale-95"
             >
-              <div class="w-8 h-8 bg-gradient-to-br from-carrot-orange to-eastern-blue rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div class="w-8 h-8 bg-gradient-to-br from-carrot-orange to-eastern-blue rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-active:scale-95">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
               </div>
-              <span>Enviar correo electrónico</span>
-              <svg class="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span class="text-sm sm:text-base">Enviar correo electrónico</span>
+              <svg class="w-4 h-4 ml-auto transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
               </svg>
             </button>

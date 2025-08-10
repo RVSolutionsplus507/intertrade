@@ -78,8 +78,8 @@ const faqs = [
     <!-- FAQ Flip Cards Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {faqs.map((faq) => (
-        <div class="group perspective-1000">
-          <div class="relative w-full h-64 transform-style-preserve-3d transition-transform duration-700 group-hover:rotate-y-180">
+        <div class="group perspective-1000 cursor-pointer" tabindex="0">
+          <div class="relative w-full h-64 transform-style-preserve-3d transition-transform duration-700 group-hover:rotate-y-180 group-focus:rotate-y-180 group-active:rotate-y-180">
             
             <!-- Front Side (Question) -->
             <div class="absolute inset-0 w-full h-full backface-hidden">
@@ -107,7 +107,7 @@ const faqs = [
                 <div class="flex justify-center mt-4">
                   <div class="inline-flex items-center text-carrot-orange font-gotham-medium text-sm">
                     <span>Ver respuesta</span>
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 group-focus:translate-x-1 group-active:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>
                   </div>
@@ -140,7 +140,7 @@ const faqs = [
                 <!-- Back Indicator -->
                 <div class="flex justify-center mt-4">
                   <div class="inline-flex items-center text-white/80 font-gotham-medium text-sm">
-                    <svg class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 mr-2 group-hover:-translate-x-1 group-focus:-translate-x-1 group-active:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
                     </svg>
                     <span>Retornar</span>

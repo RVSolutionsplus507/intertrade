@@ -33,22 +33,22 @@ try {
   </div>
   
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+    <!-- Logo Section - Outside Grid -->
+    <div class="flex items-center justify-center mb-8">
+      <div class="relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-carrot-orange/20 to-eastern-blue/20 rounded-xl blur-lg"></div>
+        <img 
+          src="/Logo.webp" 
+          alt={companyData.name}
+          class="relative h-16 sm:h-18 lg:h-20 w-auto drop-shadow-xl"
+        />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 items-start">
       
       <!-- Company Info & Contact -->
       <div class="lg:col-span-1">
-        <!-- Logo -->
-        <div class="flex items-center justify-center lg:justify-start space-x-3 mb-6">
-          <div class="relative">
-            <div class="absolute inset-0 bg-gradient-to-r from-carrot-orange/20 to-eastern-blue/20 rounded-xl blur-lg"></div>
-            <img 
-              src="/Logo.webp" 
-              alt={companyData.name}
-              class="relative h-20 sm:h-24 lg:h-28 w-auto drop-shadow-xl"
-            />
-          </div>
-        </div>
-        
         <!-- Company Description -->
         <div class="mb-6">
           <p class="font-gotham text-gray-300 leading-relaxed">
@@ -59,10 +59,10 @@ try {
         <!-- Email Contact -->
         <div class="mb-6">
           <h4 class="font-gotham-bold text-lg text-white mb-3 flex items-center">
-            <span class="w-1.5 h-6 bg-gradient-to-b from-carrot-orange to-eastern-blue rounded-full mr-2"></span>
+            <span class="w-1.5 h-4 bg-gradient-to-b from-carrot-orange to-eastern-blue rounded-full mr-2"></span>
             Contacto
           </h4>
-          <div class="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10 transition-all duration-300 hover:border-carrot-orange/30 active:border-carrot-orange/50 active:bg-white/10">
+          <div class="bg-white/5 backdrop-blur-sm rounded-lg p-1 border border-white/10 transition-all duration-300 hover:border-carrot-orange/30 active:border-carrot-orange/50 active:bg-white/10">
             <button 
               onclick="openEmailClient()" 
               class="font-gotham text-carrot-orange transition-colors duration-300 flex items-center space-x-2 group w-full text-left hover:text-eastern-blue active:text-eastern-blue active:scale-95"

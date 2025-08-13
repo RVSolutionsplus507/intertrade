@@ -62,15 +62,15 @@ const puertos = [
     </div>
 
     <!-- Video and Content Section -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start flex-1">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 items-start flex-1">
       <!-- Video Section -->
-      <div class="order-2 lg:order-1">
+      <div class="order-2 lg:order-1 lg:col-span-3">
         <div class="relative group">
           <div class="absolute -inset-4 bg-gradient-to-r from-carrot-orange/20 to-eastern-blue/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
           <div class="relative bg-white/90 backdrop-blur-sm rounded-3xl p-2 shadow-2xl border border-white/20">
-            <div class="relative rounded-2xl overflow-hidden aspect-video bg-gray-900">
+            <div class="relative rounded-2xl overflow-hidden h-80 lg:h-96 bg-gray-900">
               <video 
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover object-center"
                 autoplay
                 muted
                 loop
@@ -94,19 +94,10 @@ const puertos = [
       </div>
 
       <!-- Content -->
-      <div class="order-1 lg:order-2">
+      <div class="order-1 lg:order-2 lg:col-span-2">
         <div class="lg:pl-8">
-          
-          <h3 class="font-gotham-bold text-2xl lg:text-3xl text-gray-900 mb-6 leading-tight">
-            Alianzas Estratégicas Globales
-          </h3>
-          
-          <p class="font-gotham text-lg text-gray-600 mb-6 leading-relaxed">
-            Estas alianzas estratégicas nos permiten ofrecer soluciones logísticas ágiles, seguras y globalmente integradas.
-          </p>
-
           <!-- Puertos Scrolleable -->
-          <div class="h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-carrot-orange/20 scrollbar-track-gray-100 pr-2">
+          <div class="h-80 lg:h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-carrot-orange scrollbar-track-gray-100 hover:scrollbar-thumb-carrot-orange/80 pr-2">
             <div class="space-y-2">
               {puertos.map((puerto) => (
                 <div class="group relative">

@@ -19,11 +19,11 @@
       <div class="mx-auto w-20 h-1 bg-gradient-to-r from-carrot-orange to-manhattan rounded-full mt-6"></div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-start">
       <!-- Cards Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 h-full">
         <!-- Alimentación y Bebidas -->
-        <div class="flip-card group h-72 sm:h-64 perspective-1000 flip-card-container cursor-pointer" tabindex="0">
+        <div class="flip-card group h-56 sm:h-52 perspective-1000 flip-card-container cursor-pointer" tabindex="0">
           <div class="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180 group-focus:rotate-y-180 group-active:rotate-y-180">
             <!-- Front -->
             <div class="flip-card-front absolute inset-0 w-full h-full backface-hidden bg-gradient-to-br from-carrot-orange to-manhattan rounded-2xl shadow-xl flex flex-col items-center justify-center text-white p-6">
@@ -54,7 +54,7 @@
         </div>
 
         <!-- Plásticos y Empaques -->
-        <div class="flip-card group h-72 sm:h-64 perspective-1000 flip-card-container cursor-pointer" tabindex="0">
+        <div class="flip-card group h-56 sm:h-52 perspective-1000 flip-card-container cursor-pointer" tabindex="0">
           <div class="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180 group-focus:rotate-y-180 group-active:rotate-y-180">
             <!-- Front -->
             <div class="flip-card-front absolute inset-0 w-full h-full backface-hidden bg-gradient-to-br from-eastern-blue to-spray rounded-2xl shadow-xl flex flex-col items-center justify-center text-white p-6">
@@ -85,7 +85,7 @@
         </div>
 
         <!-- Industria Química -->
-        <div class="flip-card group h-64 perspective-1000 flip-card-container cursor-pointer" tabindex="0">
+        <div class="flip-card group h-56 sm:h-52 perspective-1000 flip-card-container cursor-pointer" tabindex="0">
           <div class="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180 group-focus:rotate-y-180 group-active:rotate-y-180">
             <!-- Front -->
             <div class="flip-card-front absolute inset-0 w-full h-full backface-hidden bg-gradient-to-br from-carrot-orange to-golden-glow rounded-2xl shadow-xl flex flex-col items-center justify-center text-white p-6">
@@ -116,7 +116,7 @@
         </div>
 
         <!-- Industria Maderera -->
-        <div class="flip-card group h-64 perspective-1000 flip-card-container cursor-pointer" tabindex="0">
+        <div class="flip-card group h-56 sm:h-52 perspective-1000 flip-card-container cursor-pointer" tabindex="0">
           <div class="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180 group-focus:rotate-y-180 group-active:rotate-y-180">
             <!-- Front -->
             <div class="flip-card-front absolute inset-0 w-full h-full backface-hidden bg-gradient-to-br from-sante-fe to-manhattan rounded-2xl shadow-xl flex flex-col items-center justify-center text-white p-6">
@@ -148,9 +148,9 @@
       </div>
 
       <!-- Video Section -->
-      <div class="flex items-center justify-center lg:justify-end">
-        <div class="relative w-full max-w-md lg:max-w-lg">
-          <div class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+      <div class="flex items-start justify-center lg:justify-end h-full">
+        <div class="relative w-full max-w-md lg:max-w-lg h-full">
+          <div class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 h-full min-h-[450px] sm:min-h-[420px] lg:min-h-[460px] flex items-center">
             <video 
               src="/assets/videos/Industrias.mp4"
               autoplay 
@@ -158,8 +158,7 @@
               loop 
               playsinline
               preload="auto"
-              class="w-full h-auto object-cover rounded-2xl"
-              style="aspect-ratio: 16/9;"
+              class="w-full h-full object-cover rounded-2xl"
             >
               Tu navegador no soporta el elemento video.
             </video>

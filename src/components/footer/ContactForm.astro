@@ -2,7 +2,7 @@
 // Contact Form Component for Footer
 ---
 
-<div class="relative bg-gradient-to-br from-white via-white to-gray-50 rounded-xl p-6 shadow-lg border border-gray-100 overflow-hidden h-full flex flex-col">
+<div class="relative bg-gradient-to-br from-white via-white to-gray-50 rounded-xl p-5 shadow-lg border border-gray-100 overflow-hidden h-full flex flex-col">
   <!-- Background Pattern -->
   <div class="absolute inset-0 opacity-5">
     <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(248,139,33,0.3) 1px, transparent 0); background-size: 30px 30px;"></div>
@@ -16,7 +16,7 @@
         Contáctanos
       </h3>
       <p class="font-gotham text-gray-600">
-        ¿Tienes alguna pregunta? Estamos aquí para ayudarte.
+        ¿Tienes alguna pregunta? Estamos aquí para ayudarte. Puedes escribir a <button onclick="openContactEmail()" class="font-gotham-bold text-carrot-orange hover:text-eastern-blue transition-colors duration-300 cursor-pointer underline decoration-carrot-orange hover:decoration-eastern-blue select-none">info@intertradesolutions.com</button> o completar el formulario y te responderemos cuanto antes.
       </p>
     </div>
   
@@ -150,4 +150,17 @@
       });
     }
   });
+
+  // Función segura para abrir cliente de correo desde formulario
+  function openContactEmail() {
+    // Email codificado para mayor seguridad
+    const emailParts = ['info', '@', 'intertrade', 'solutions', '.com'];
+    const email = emailParts.join('');
+    
+    // Crear enlace mailto dinámicamente
+    const mailtoLink = `mailto:${email}?subject=Consulta desde formulario de contacto&body=Hola, me gustaría obtener más información sobre sus servicios.`;
+    
+    // Abrir cliente de correo del usuario
+    window.location.href = mailtoLink;
+  }
 </script>

@@ -5,7 +5,6 @@
 <section id="hero" class="relative h-screen min-h-[600px] max-h-[900px] sm:h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-eastern-blue to-carrot-orange before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-20 before:bg-gradient-to-b before:from-black/35 before:to-transparent before:z-20 after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-16 md:after:h-24 after:bg-gradient-to-b after:from-transparent after:to-black/20 after:z-[25] mask-image-[linear-gradient(to_bottom,black_0%,black_85%,transparent_100%)]">
   <!-- Video Background -->
   <video 
-    src="/assets/videos/introduccion.mp4"
     autoplay 
     muted 
     loop 
@@ -13,6 +12,11 @@
     preload="auto"
     class="absolute inset-0 w-full h-full object-cover object-[50%_60%] z-0"
   >
+    <!-- Mobile video source -->
+    <source src="/assets/videos/Heromobile.mp4" type="video/mp4" media="(max-width: 768px)">
+    <!-- Desktop video source -->
+    <source src="/assets/videos/introduccion.mp4" type="video/mp4" media="(min-width: 769px)">
+    <!-- Fallback for older browsers -->
     <source src="/assets/videos/introduccion.mp4" type="video/mp4">
   </video>
   

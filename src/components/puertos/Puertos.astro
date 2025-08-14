@@ -76,6 +76,11 @@ const puertos = [
                 loop
                 playsinline
               >
+                <!-- Mobile video source -->
+                <source src="/assets/videos/Puertosmobile.mp4" type="video/mp4" media="(max-width: 768px)">
+                <!-- Desktop video source -->
+                <source src="/assets/videos/Puertos.mp4" type="video/mp4" media="(min-width: 769px)">
+                <!-- Fallback for older browsers -->
                 <source src="/assets/videos/Puertos.mp4" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
               </video>
